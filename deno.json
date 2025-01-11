@@ -1,0 +1,16 @@
+{
+  "name": "@sander/html",
+  "version": "0.1.0",
+  "license": "MIT",
+  "exports": "./mod.ts",
+  "tasks": {
+    "test": "deno test --doc",
+    "doc": "deno doc --html html.ts",
+    "coverage": "rm -Rf ./coverage && deno test --coverage && deno coverage ./coverage",
+    "coverage:html": "rm -Rf ./coverage && deno test --coverage && deno coverage ./coverage --html",
+    "embed:example": "deno run -A embed_example.ts"
+  },
+  "authors": [
+    "Sander Hahn <sanderhahn@gmail.com>"
+  ]
+}
