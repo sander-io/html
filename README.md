@@ -1,4 +1,4 @@
-# HTML Generator: Simplify HTML Creation with `html` and `tag` Functions
+# HTML Generation Functions
 
 Easily generate formatted HTML source code programmatically using simple and
 flexible functions.
