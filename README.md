@@ -16,6 +16,10 @@ To install the library, use:
 
 ```bash
 deno add jsr:@sander/html
+
+npx jsr add @sander/html
+
+bunx jsr add @sander/html
 ```
 
 ## Usage
@@ -23,7 +27,7 @@ deno add jsr:@sander/html
 Here’s a quick example to get started:
 
 ```typescript
-import { html, tag } from "jsr:@sander/html";
+import { html, tag } from "@sander/html";
 
 // Generate a simple HTML structure
 const page = html(
