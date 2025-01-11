@@ -58,11 +58,17 @@ function emptyChildren(children: HtmlNode): boolean {
 /**
  * Create an html tag
  * @param tag - the tag name
- * @param attrs - the attributes
  * @param children - the children
  * @returns the html tag
  */
 export function tag(tag: string, children?: HtmlNode): HtmlTag;
+/**
+ * Create an html tag
+ * @param tag - the tag name
+ * @param attrs - the attributes
+ * @param children - the children
+ * @returns the html tag
+ */
 export function tag(
   tag: string,
   attrs?: { [attr: string]: AttrValue },
