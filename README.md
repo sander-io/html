@@ -23,7 +23,7 @@ deno add jsr:@sander/html
 Here’s a quick example to get started:
 
 ```typescript
-import { html, tag } from "./html.ts";
+import { html, tag } from "jsr:@sander/html";
 
 // Generate a simple HTML structure
 const page = html(

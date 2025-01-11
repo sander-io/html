@@ -1,4 +1,4 @@
-import { html, type HtmlNode, tag } from "./html.ts";
+import { html, type HtmlNode, tag } from "jsr:@sander/html";
 import { assertEquals } from "jsr:@std/assert/equals";
 
 const title = "Cool Projects";
