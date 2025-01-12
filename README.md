@@ -1,5 +1,7 @@
 # HTML Generation Functions
 
+[![https://coveralls.io/](https://img.shields.io/coverallsCoverage/github/sander-io/html)](https://coveralls.io/github/sander-io/html)
+
 Easily generate formatted HTML source code programmatically using simple and
 flexible functions.
 
