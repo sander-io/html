@@ -10,7 +10,8 @@
     "coverage": "rm -Rf ./coverage && deno test --coverage && deno coverage ./coverage",
     "coverage:html": "rm -Rf ./coverage && deno test --coverage && deno coverage ./coverage --html",
     "embed:example": "deno run -A embed_example.ts",
-    "tsc": "deno run -A npm:typescript/tsc --project tsconfig.json && deno fmt dist"
+    "tsc": "deno run -A npm:typescript/tsc --project tsconfig.json && deno fmt dist",
+    "hook": "deno run --allow-read --allow-run --allow-write https://deno.land/x/deno_hooks@0.1.1/mod.ts"
   },
   "authors": [
     "Sander Hahn <sanderhahn@gmail.com>"
