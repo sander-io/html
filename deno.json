@@ -9,12 +9,15 @@
     "doc": "deno doc --html html.ts",
     "coverage": "rm -Rf ./coverage && deno test --coverage && deno coverage ./coverage",
     "coverage:html": "rm -Rf ./coverage && deno test --coverage && deno coverage ./coverage --html",
-    "embed:example": "deno run -A embed_example.ts"
+    "embed:example": "deno run -A embed_example.ts",
+    "tsc": "deno run -A npm:typescript/tsc --project tsconfig.json && deno fmt dist"
   },
   "authors": [
     "Sander Hahn <sanderhahn@gmail.com>"
   ],
   "imports": {
-    "@std/assert": "jsr:@std/assert@^1.0.10"
-  }
+    "@std/assert": "jsr:@std/assert@^1.0.10",
+    "typescript": "npm:typescript@^5.7.3"
+  },
+  "nodeModulesDir": "auto"
 }
