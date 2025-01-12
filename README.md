@@ -1,5 +1,6 @@
 # HTML Generation Functions
 
+[![JSR](https://jsr.io/badges/@sander/html)](https://jsr.io/@sander/html)
 [![https://coveralls.io/](https://img.shields.io/coverallsCoverage/github/sander-io/html)](https://coveralls.io/github/sander-io/html)
 
 Easily generate formatted HTML source code programmatically using simple and
