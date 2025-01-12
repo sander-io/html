@@ -10,6 +10,16 @@ flexible functions.
 - Great for templating or dynamic HTML generation in TypeScript/JavaScript
   projects.
 
+## API
+
+- `html`: Generate an HTML source document from the `HtmlNode`, with options
+  for: `doctype`, `indentText`, and `insertNewLines`.
+- `tag`: Generate an HTML tag, can have attributes and an arbitrary number of
+  children nodes as arguments.
+- `raw`: Insert raw unescaped HTML.
+- `comment`: Generate an HTML comment.
+- `toHtml`: Convert an object value to an `HtmlNode`.
+
 ## Installation
 
 To install the library, use:
@@ -27,37 +37,55 @@ bunx jsr add @sander/html
 Here’s a quick example to get started:
 
 ```typescript
-import { html, tag } from "@sander/html";
+import { assertEquals } from "@std/assert";
+import { html, tag } from "./html.ts";
 
-// Generate a simple HTML structure
 const page = html(
   tag("html", [
     tag("h1", "Welcome to HTML Generator"),
-    tag("p", "This is an example of generated HTML."),
+    tag("div", { class: "banner" }, "This is an example of generated HTML."),
   ]),
   {
     doctype: "html",
   },
 );
 
-console.log(page);
-// Output:
-// <!doctype html>
-// <html>
-//   <h1>
-//     Welcome to HTML Generator
-//   </h1>
-//   <p>
-//     This is an example of generated HTML.
-//   </p>
-// </html>
+assertEquals(
+  page,
+  `\
+<!doctype html>
+<html>
+  <h1>
+    Welcome to HTML Generator
+  </h1>
+  <div class="banner">
+    This is an example of generated HTML.
+  </div>
+</html>
+`,
+);
 ```
 
 For a longer example, check out [`example.ts`](./example.ts).
 
+The `ToHtml` interface with an `toHtml` method can be used implement custom
+types that can be converted to HTML.
+
+```ts
+import { type HtmlNode, tag, type ToHtml } from "@sander/html";
+
+class Custom implements ToHtml {
+  constructor(public value: string) {}
+
+  toHtml(): HtmlNode {
+    return tag("div", { class: "custom" }, this.value);
+  }
+}
+```
+
 ## Prerequisites
 
-- Deno
+- Deno, Node, Bun, or another JavaScript runtime.
 
 ## Contributing
 

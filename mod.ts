@@ -1,1 +1,1 @@
-export { html, type HtmlNode, tag } from "./html.ts";
+export { html, type HtmlNode, tag, type ToHtml } from "./html.ts";

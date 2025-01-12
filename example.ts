@@ -1,5 +1,5 @@
-import { html, type HtmlNode, tag } from "./html.ts";
-import { assertEquals } from "jsr:@std/assert/equals";
+import { html, type HtmlNode, tag } from "@sander/html";
+import { assertEquals } from "@std/assert";
 
 const title = "Cool Projects";
 
@@ -23,7 +23,7 @@ const cssRules = [
 ];
 
 function list(items: HtmlNode[]) {
-  return tag("ul", {}, items.map((item) => tag("li", {}, item)));
+  return tag("ul", items.map((item) => tag("li", item)));
 }
 
 function link({ title, url }: Project) {
@@ -32,13 +32,13 @@ function link({ title, url }: Project) {
 
 const result = html(
   tag("html", { lang: "en" }, [
-    tag("head", {}, [
+    tag("head", [
       tag("meta", { charset: "utf-8" }),
-      tag("title", {}, title),
-      tag("style", {}, cssRules),
+      tag("title", title),
+      tag("style", cssRules),
     ]),
-    tag("body", {}, [
-      tag("h1", {}, title),
+    tag("body", [
+      tag("h1", title),
       list(projects.map(link)),
     ]),
   ]),
