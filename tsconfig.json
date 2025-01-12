@@ -8,11 +8,11 @@
     "lib": [
       "ES2021",
       "ES2016.Array.Include",
-      "DOM",
+      "DOM"
     ],
     "module": "ESNext",
     "outDir": "./dist",
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     "**/*.ts"
@@ -22,6 +22,6 @@
     "dist",
     "mod.ts",
     "**/*_test.ts",
-    "**/*example.ts",
-  ],
+    "**/*example.ts"
+  ]
 }
