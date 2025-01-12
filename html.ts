@@ -279,14 +279,14 @@ function innerHtml(
  * ```ts
  * import { html, type HtmlNode, tag } from "@sander/html";
  * import { assertEquals } from "@std/assert";
- * 
+ *
  * const title = "Cool Projects";
- * 
+ *
  * interface Project {
  *   title: string;
  *   url: string;
  * }
- * 
+ *
  * const projects: Project[] = [{
  *   title: "Deno",
  *   url: "https://deno.com/",
@@ -294,21 +294,21 @@ function innerHtml(
  *   title: "TypeScript",
  *   url: "https://www.typescriptlang.org/",
  * }];
- * 
+ *
  * const cssRules = [
  *   "* { --ts-blue: #3178c6; }",
  *   "body { font-family: sans-serif; line-height: 1.6; }",
  *   "li > a { color: var(--ts-blue); text-decoration: none; }",
  * ];
- * 
+ *
  * function list(items: HtmlNode[]) {
  *   return tag("ul", items.map((item) => tag("li", item)));
  * }
- * 
+ *
  * function link({ title, url }: Project) {
  *   return tag("a", { href: url }, title);
  * }
- * 
+ *
  * const result = html(
  *   tag("html", { lang: "en" }, [
  *     tag("head", [
@@ -325,7 +325,7 @@ function innerHtml(
  *     doctype: "html",
  *   },
  * );
- * 
+ *
  * assertEquals(
  *   result,
  *   `\

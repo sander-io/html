@@ -6,7 +6,9 @@ const rawExample = Deno.readFileSync(
   new URL("example.ts", import.meta.url),
 );
 const sourceExample = new TextDecoder().decode(rawExample).trim();
-const exampleReplacement = sourceExample.replaceAll(/^/gm, " * ") + "\n";
+const exampleReplacement = sourceExample
+  .replaceAll(/^/gm, " * ")
+  .replaceAll(/^ \* $/gm, " *") + "\n";
 
 const startMarker = `\
  * filename: \`example.ts\`
