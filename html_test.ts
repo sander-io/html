@@ -1,4 +1,4 @@
-import { comment, html, raw, tag, type ToHtml } from "./html.ts";
+import { comment, html, type HtmlNode, raw, tag, type ToHtml } from "./html.ts";
 import { assertEquals, assertThrows } from "jsr:@std/assert";
 
 const noWhitespace = { indentText: "", insertNewLines: false };
@@ -123,10 +123,10 @@ Deno.test("convert objects to html in content", () => {
 });
 
 Deno.test("arbitrary objects should throw an exception", () => {
-  const obj = { foo: "bar" };
+  const obj = { foo: "bar" } as unknown as HtmlNode;
   assertThrows(
     () => {
-      html(obj as any);
+      html(obj);
     },
     Error,
     "Cannot convert object to HTML",
@@ -195,7 +195,7 @@ Deno.test("attr values are parsed correctly", () => {
   });
   assertThrows(
     () => {
-      tag("custom", { invalid: new Date() } as any);
+      tag("custom", { invalid: new Date() } as unknown as HtmlNode);
     },
     Error,
     "Invalid attribute value",

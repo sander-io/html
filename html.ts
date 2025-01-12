@@ -24,7 +24,7 @@ const voidElements =
     .split(", ");
 const rawTextElements = "script, style, title, textarea".split(", ");
 
-function isHtmlNode(value: any): value is HtmlNode {
+function isHtmlNode(value: HtmlNode | Attrs): value is HtmlNode {
   return (
     value instanceof Tag ||
     value instanceof RawHtml ||
@@ -110,13 +110,16 @@ function parseAttrValue(value: AttrValue): AttrValue {
   throw new Error(`Invalid attribute value: ${value}`);
 }
 
-function parseAttrs(attrs?: any): Attrs {
+function parseAttrs(attrs: HtmlNode | Attrs): Attrs {
+  if (isHtmlNode(attrs)) {
+    throw new Error("unreachable");
+  }
   const parsed: Attrs = {};
   for (const [key, value] of Object.entries(attrs)) {
     if (!validAttrName(key)) {
       throw new Error(`Invalid attribute name: ${key}`);
     }
-    parsed[key] = parseAttrValue(value as any);
+    parsed[key] = parseAttrValue(value);
   }
   return parsed;
 }
@@ -383,6 +386,8 @@ export interface ToHtml {
   toHtml(): HtmlNode;
 }
 
-function isToHtml(value: any): value is ToHtml {
-  return value && typeof value.toHtml === "function";
+function isToHtml(value: unknown): value is ToHtml {
+  return value !== undefined &&
+    typeof value === "object" &&
+    typeof (value as ToHtml).toHtml === "function";
 }
