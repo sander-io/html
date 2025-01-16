@@ -3,7 +3,9 @@
   "specifiers": {
     "jsr:@std/assert@*": "1.0.10",
     "jsr:@std/assert@^1.0.10": "1.0.10",
-    "jsr:@std/internal@^1.0.5": "1.0.5"
+    "jsr:@std/internal@^1.0.5": "1.0.5",
+    "npm:typescript@*": "5.7.3",
+    "npm:typescript@^5.7.3": "5.7.3"
   },
   "jsr": {
     "@std/assert@1.0.10": {
@@ -16,9 +18,15 @@
       "integrity": "54a546004f769c1ac9e025abd15a76b6671ddc9687e2313b67376125650dc7ba"
     }
   },
+  "npm": {
+    "typescript@5.7.3": {
+      "integrity": "sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw=="
+    }
+  },
   "workspace": {
     "dependencies": [
-      "jsr:@std/assert@^1.0.10"
+      "jsr:@std/assert@^1.0.10",
+      "npm:typescript@^5.7.3"
     ]
   }
 }

@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "target": "ES2021",
+    "lib": [
+      "ES2021",
+      "ES2016.Array.Include",
+      "DOM"
+    ],
+    "module": "ESNext",
+    "outDir": "./dist",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "mod.ts",
+    "**/*_test.ts",
+    "**/*example.ts"
+  ]
+}
