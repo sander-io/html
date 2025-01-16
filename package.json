@@ -1,0 +1,12 @@
+{
+  "name": "@sander/html",
+  "type": "module",
+  "main": "./dist/html.js",
+  "exports": {
+    ".": {
+      "import": "./dist/html.js",
+      "require": "./dist/html.js",
+      "types": "./dist/html.d.ts"
+    }
+  }
+}
