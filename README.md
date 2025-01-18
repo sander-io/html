@@ -1,6 +1,7 @@
 # HTML Generation Functions
 
 [![JSR](https://jsr.io/badges/@sander/html)](https://jsr.io/@sander/html)
+[![JSR](https://jsr.io/badges/@sander/html/score)](https://jsr.io/@sander/html/score)
 [![https://coveralls.io/](https://img.shields.io/coverallsCoverage/github/sander-io/html)](https://coveralls.io/github/sander-io/html)
 
 Easily generate formatted HTML source code programmatically using simple and
@@ -10,7 +11,8 @@ flexible functions.
 
 - Lightweight and easy to use.
 - Generate clean, formatted HTML programmatically.
-- Great for templating or dynamic HTML generation in TypeScript/JavaScript
+- Great for templating or dynamic HTML generation in
+  [TypeScript](https://www.typescriptlang.org/)/[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
   projects.
 
 ## API
@@ -103,7 +105,8 @@ that are better suited for interactive applications.
 
 ## Prerequisites
 
-- Deno, Node, Bun, or another JavaScript runtime.
+- [Deno](https://deno.com/), [Node](https://nodejs.org/en),
+  [Bun](https://bun.sh/), or another JavaScript runtime.
 
 ## Contributing
 
@@ -112,4 +115,4 @@ fixes, new features, or documentation improvements.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](LICENSE).

@@ -183,6 +183,11 @@ function isValidComment(text: string): boolean {
     !text.includes("--!>");
 }
 
+/**
+ * Create a comment node
+ * @param text text of the comment
+ * @returns
+ */
 export function comment(text: string): HtmlNode {
   if (!isValidComment(text)) {
     throw new Error(`Invalid comment text: ${text}`);
