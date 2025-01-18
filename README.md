@@ -22,6 +22,7 @@ flexible functions.
 - `raw`: Insert raw unescaped HTML.
 - `comment`: Generate an HTML comment.
 - `toHtml`: Convert an object value to an `HtmlNode`.
+- `escapeHtml`: Escape HTML special characters in a string.
 
 ## Installation
 
@@ -85,6 +86,20 @@ class Custom implements ToHtml {
   }
 }
 ```
+
+This library can also be used inside the brower to generate HTML source code.
+
+```html
+<script type="module">
+  import { escapeHtml } from "https://esm.sh/@jsr/sander__html/";
+  console.log(escapeHtml('<script>alert("xss")<' + "/script>"));
+  // output: &lt;script&gt;alert(&quot;xss&quot;)&lt;/script&gt;
+</script>
+```
+
+Although the browser has DOM manipulation APIs and there exists
+[frontend frameworks](https://2024.stateofjs.com/en-US/libraries/front-end-frameworks/)
+that are better suited for interactive applications.
 
 ## Prerequisites
 
